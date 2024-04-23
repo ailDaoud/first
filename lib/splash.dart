@@ -15,14 +15,23 @@ class _SplashState extends State<Splash> {
     super.initState();
     splashh();
   }
-  splashh()async{
+
+  splashh() async {
     await Future.delayed(const Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: "")));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => MyHomePage(title: "")));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("First splash" ,style: TextStyle(color: Colors.amber[600],fontSize: 40),),),
+      backgroundColor: Colors.blueGrey,
+      body: Center(
+        child: Text(
+          "First splash",
+          style: TextStyle(color: Colors.amber[600], fontSize: 40),
+        ),
+      ),
     );
   }
 }

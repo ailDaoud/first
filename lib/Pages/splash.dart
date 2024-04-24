@@ -1,6 +1,7 @@
-import 'package:first_task2/Home.dart';
+import 'package:first_task2/Pages/Home.dart';
 //import 'package:first_task2/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -17,9 +18,13 @@ class _SplashState extends State<Splash> {
   }
 
   splashh() async {
+    /*BlocProvider(
+      create: (context) => Bloc(),
+      child: Container(),
+    );*/
     await Future.delayed(const Duration(seconds: 3));
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => MyHomePage(title: "")));
+        MaterialPageRoute(builder: (context) =>const  MyHomePage()));
   }
 
   @override

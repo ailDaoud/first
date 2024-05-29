@@ -1,11 +1,17 @@
-import 'package:first_task2/Pages/splash.dart';
+import 'package:first_task2/Const/routes_app.dart';
+import 'package:first_task2/bloc/Content/content_bloc.dart';
+import 'package:first_task2/bloc/bloc/bloc/sub_category_bloc.dart';
+import 'package:first_task2/bloc/bloc/login_bloc.dart';
+import 'package:first_task2/bloc/bloc/trendy_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:dio/dio.dart';
-import 'bloc/counter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+SharedPreferences? sharedPreferences;
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  sharedPreferences = await SharedPreferences.getInstance();
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   runApp(
@@ -24,19 +30,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterBloc(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LoginBloc(),
         ),
-        home: const Splash(),
+        BlocProvider(
+          create: (context) => ContentBloc(),
+        ),
+        BlocProvider(
+          create: (context) => TrendyBloc(),
+        ),
+        BlocProvider(
+          create: (context) => SubCategoryBloc(),
+        ),
+      ],
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        title: 'Fancy Dialog Example',
+
+        // home: const Splash(),
+        routerConfig: Myroute().router,
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:first_task2/Model/Categoriesmodel.dart';
 import 'package:first_task2/Model/trendymodel.dart';
-import 'package:first_task2/bloc/Content/content_bloc.dart';
-import 'package:first_task2/bloc/bloc/trendy_bloc.dart';
+import 'package:first_task2/Screen/Home/bloc/content_bloc.dart';
+import 'package:first_task2/Screen/Home/bloc/trendy_bloc.dart';
 import 'package:first_task2/main.dart';
 import 'package:flutter/material.dart';
 

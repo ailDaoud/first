@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:first_task2/Model/trendymodel.dart';
 import 'package:first_task2/Repository/contentrepo.dart';
-import 'package:flutter/material.dart';
+
 
 part 'trendy_event.dart';
 part 'trendy_state.dart';

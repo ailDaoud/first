@@ -1,8 +1,8 @@
 import 'package:first_task2/Const/routes_app.dart';
-import 'package:first_task2/bloc/Content/content_bloc.dart';
-import 'package:first_task2/bloc/bloc/bloc/sub_category_bloc.dart';
-import 'package:first_task2/bloc/bloc/login_bloc.dart';
-import 'package:first_task2/bloc/bloc/trendy_bloc.dart';
+import 'package:first_task2/Screen/Home/bloc/content_bloc.dart';
+import 'package:first_task2/Screen/SubCategory/bloc/sub_category_bloc.dart';
+import 'package:first_task2/Screen/Login/bloc/login_bloc.dart';
+import 'package:first_task2/Screen/Home/bloc/trendy_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
